@@ -1,3 +1,26 @@
 spring:
   application:
     name: sed-archea-backend
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+        default_schema: SED_ARCHEA
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+springdoc:
+  api-docs:
+    path: /api/api-docs
+  swagger-ui:
+    path: /api/swagger-ui.html

@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    jndi-name: jdbc/archea-oracle
+  neo4j:
+    uri: ${NEO4J_URI}
+    authentication:
+      username: ${NEO4J_USER}
+      password: ${NEO4J_PASSWORD}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AZURE_ISSUER_URI}
+          jwk-set-uri: ${AZURE_JWKS_URI}
+
+server:
+  servlet:
+    context-path: /sed-archea
+
+logging:
+  level:
+    co.gov.bogota.sed.archea: INFO
